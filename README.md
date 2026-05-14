@@ -1,21 +1,21 @@
 # BFloat16 Floating-Point Processor Implementation
-A complete **16-bit BFloat16 floating-point processor** designed and implemented in Verilog HDL, featuring modular RTL architecture, simulation verification, and FPGA deployment capabilities. The project includes functional simulation and verification using testbenches, successful implementation of arithmetic operations on real hardware.
+A complete **16-bit BFloat16 floating-point processor** designed and implemented in Verilog HDL, featuring modular RTL architecture, simulation verification, and FPGA deployment capabilities. The project includes successful implementation of arithmetic operations on real hardware.
 ---
-# BFloat16 Single-Cycle Processor Implementation
-A complete **16-bit BFloat16 floating-point processor** based on the BFloat16 format (1 sign bit, 8 exponent bits, 7 mantissa bits). The design includes all major datapath and control components required for floating-point addition, subtraction, and multiplication operations.
+# BFloat16 Processor Implementation
+A complete **16-bit BFloat16 floating-point processor** based on the BFloat16 format (1 sign bit, 8 exponent bits, 7 mantissa bits). The design includes all control components required for floating-point addition, subtraction, and multiplication operations.
 
 The processor was:
 - Designed using Verilog HDL
 - Simulated and verified using Icarus Verilog and GTKWave
 - Synthesized and deployed on FPGA development boards
 - Tested with various test cases for functional verification
-- Integrated with hardware interfaces for real-time output monitoring
+- Integrated with fpga led's for real-time output monitoring
 
 The design successfully performs **floating-point arithmetic operations** on BFloat16 format numbers, demonstrating correct unpacking, alignment, computation, normalization, and packing of results.
 ---
 # Key Features
 - 16-bit **BFloat16 processor implementation**
-- Single-cycle processor capable of executing **addition, subtraction, and multiplication** operations on BFloat16 format numbers
+- Processor capable of executing **addition, subtraction, and multiplication** operations on BFloat16 format numbers
 - Modular RTL design using **Verilog HDL**
 - RTL modules including:
   - **Unpacker**: Extracts sign, exponent, and mantissa from BFloat16 input
@@ -25,8 +25,7 @@ The design successfully performs **floating-point arithmetic operations** on BFl
   - **Multiplier**: Performs multiplication of two BFloat16 numbers
   - **Normalizer**: Normalizes results and handles exponent adjustments
   - **Packer**: Packs final result back into BFloat16 format
-- Support for **special values** (zero, infinity, NaN handling)
-- Complete **simulation testbench**
+- Support for **special values** (zero, infinity)
 - Successful **synthesized and verified** design
 - **Operation selection** via sel input (00=pass-through, 01=add/sub, 10=multiply)
 
@@ -59,4 +58,4 @@ The design successfully performs **floating-point arithmetic operations** on BFl
 - Exponent bias: 127
 - Special cases handled: Zero, Infinity, Normal numbers
 - Maximum exponent: 254 (Infinity = 255)
-- Mantissa representation: Implied leading 1 for normalized numbers
+- Mantissa representation: Leading 1 for normalized numbers
